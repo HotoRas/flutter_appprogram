@@ -38,11 +38,7 @@ class Character extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '20231023 전도현',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: fontWeightBold,
-            letterSpacing: 2,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: fontWeightBold, letterSpacing: 2),
         ),
         backgroundColor: Color.fromARGB(255, 255, 114, 161),
         centerTitle: true,
@@ -54,19 +50,13 @@ class Character extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Image.asset('images/ch1.png', width: 200, height: 200),
-            ),
+            Center(child: Image.asset('images/ch1.png', width: 200, height: 200)),
             Divider(height: 40, color: Colors.white, thickness: 0.5),
             Text("NAME", style: TextStyle(color: Colors.white)),
             SizedBox(height: 10),
             Text(
               "전도현",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: fontWeightBold,
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: fontWeightBold),
             ),
             /*SizedBox(height: 10),
             Text("BAANTO POWER LEVEL", style: TextStyle(color: Colors.white)),
@@ -85,10 +75,7 @@ class Character extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.book_outlined),
-                Text(
-                  "Department:\nDepartment of Media-Software",
-                  style: TextStyle(fontSize: 20),
-                ),
+                Text("Department:\nDepartment of Media-Software", style: TextStyle(fontSize: 20)),
               ],
             ),
             Row(
@@ -96,10 +83,7 @@ class Character extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.menu_book_outlined),
-                Text(
-                  "Lecture\nApp Programming",
-                  style: TextStyle(fontSize: 20),
-                ),
+                Text("Lecture\nApp Programming", style: TextStyle(fontSize: 20)),
               ],
             ),
             Row(
