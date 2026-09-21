@@ -27,6 +27,30 @@ export declare interface FlutterPublicSpec extends DartPublicSpec {
             string |
             {path: string, flavors: string[]} |
             {path: string, transformers: {package: string, args: string[]}[]}
-        )[]
+        )[],
+        config?: {[key: string]: Object},
+        default_flavor?: string,
+        "deffered-components"?: {name: string, libraries: string[], assets: string[]}[],
+        fonts?: (
+            {family: string, fonts: {asset: string, weight?: bigint, style?: string}[]} |
+            {asset: string, weight?: bigint, style?: string} |
+            string
+        )[],
+        generate?: boolean,
+        licenses?: string[],
+        module?: {[key: string]: string},
+        plugin?: {
+            platforms: {[platform: string]: {
+                package: string,
+                pluginClass: string,
+                dartPluginClass: string,
+                ffiPlugin: boolean,
+                default_package: string,
+                filename: string
+            }},
+            implements?: string[]
+        },
+        shaders?: string[],
+        "uses-material-design"?: boolean,
     }
 }

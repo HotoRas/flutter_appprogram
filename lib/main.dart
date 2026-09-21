@@ -34,19 +34,20 @@ class Character extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Profile Card
       appBar: AppBar(
         title: Text(
-          'BBANTO ID CARD',
+          '20231023 전도현',
           style: TextStyle(
             color: Colors.white,
             fontWeight: fontWeightBold,
             letterSpacing: 2,
           ),
         ),
-        backgroundColor: Colors.amber[700],
+        backgroundColor: Color.fromARGB(255, 255, 114, 161),
         centerTitle: true,
       ),
-      backgroundColor: Colors.amber[900],
+      backgroundColor: Color.fromARGB(255, 255, 109, 109),
 
       body: Padding(
         padding: EdgeInsets.all(30),
@@ -60,14 +61,14 @@ class Character extends StatelessWidget {
             Text("NAME", style: TextStyle(color: Colors.white)),
             SizedBox(height: 10),
             Text(
-              "BAANTO",
+              "전도현",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 28,
                 fontWeight: fontWeightBold,
               ),
             ),
-            SizedBox(height: 10),
+            /*SizedBox(height: 10),
             Text("BAANTO POWER LEVEL", style: TextStyle(color: Colors.white)),
             SizedBox(height: 10),
             Text(
@@ -77,35 +78,44 @@ class Character extends StatelessWidget {
                 fontSize: 28,
                 fontWeight: fontWeightBold,
               ),
-            ),
+            ),*/
             SizedBox(height: 25),
             Row(
+              spacing: 15,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.check_circle_outline),
-                SizedBox(width: 15),
-                Text("Using Lightsaber", style: TextStyle(fontSize: 20)),
+                Icon(Icons.book_outlined),
+                Text(
+                  "Department:\nDepartment of Media-Software",
+                  style: TextStyle(fontSize: 20),
+                ),
               ],
             ),
             Row(
+              spacing: 15,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.check_circle_outline),
-                SizedBox(width: 15),
-                Text("Hero Face Tatto", style: TextStyle(fontSize: 20)),
+                Icon(Icons.menu_book_outlined),
+                Text(
+                  "Lecture\nApp Programming",
+                  style: TextStyle(fontSize: 20),
+                ),
               ],
             ),
             Row(
+              spacing: 15,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.check_circle_outline),
-                SizedBox(width: 15),
-                Text("Fire Flames", style: TextStyle(fontSize: 20)),
+                Text("Week 4", style: TextStyle(fontSize: 20)),
               ],
             ),
             SizedBox(height: 25),
             Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage('images/ch2.png'),
-                backgroundColor: Colors.amber[800],
+                backgroundImage: AssetImage('assets/image/pf.jpg'),
                 radius: 70,
+                backgroundColor: Colors.amber[800], // jpg => no use
               ),
             ),
           ],
