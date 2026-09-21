@@ -1,6 +1,6 @@
 name: flutter_appprogram_20231023
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0+1
 
 environment:
@@ -17,3 +17,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # flutter.assets: {string[]}
+  assets:
+    - images/ch1.png
+    - images/ch2.png
+    - images/ch3.png
+    - images/ch4.png

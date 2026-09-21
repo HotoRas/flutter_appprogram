@@ -46,3 +46,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# images/ = https://github.com/icodingchef/character_page_app
+/images/
