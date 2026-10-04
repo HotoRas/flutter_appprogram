@@ -49,3 +49,12 @@ app.*.map.json
 
 # images/ = https://github.com/icodingchef/character_page_app
 /images/
+
+# lottie/ = lottiefiles.com
+/lottie/
+
+# wavfile = https://github.com/icodingchef/animal_book
+*.wav
+
+# week 5 mp3 assets will be ignored
+/assets/*.mp3

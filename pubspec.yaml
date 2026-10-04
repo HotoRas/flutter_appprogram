@@ -7,8 +7,10 @@ environment:
   sdk: ^3.13.3
 
 dependencies:
+  audioplayers: ^6.8.1
   flutter:
     sdk: flutter
+  lottie: ^3.6.1
 
 dev_dependencies:
   flutter_test:
@@ -20,9 +22,6 @@ flutter:
 
   # flutter.assets: {string[]}
   assets:
-    - images/ch1.png
-    - images/ch2.png
-    - images/ch3.png
-    - images/ch4.png
-
-    - assets/image/
+    - images/
+    - assets/
+    - lottie/

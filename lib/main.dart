@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'package:lottie/lottie.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+import 'musicinst.dart';
+
 import 'fontweightdef.dart';
+
+double cw = 100;
+double ch = 100;
 
 /*
 FIXME (SDK): Running native debug from Code does not work proper
@@ -24,87 +32,114 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Character());
-  }
-}
-
-class Character extends StatelessWidget {
-  const new({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // Profile Card
-      appBar: AppBar(
-        title: Text(
-          '20231023 전도현',
-          style: TextStyle(color: Colors.white, fontWeight: fontWeightBold, letterSpacing: 2),
-        ),
-        backgroundColor: Color.fromARGB(255, 255, 114, 161),
-        centerTitle: true,
-      ),
-      backgroundColor: Color.fromARGB(255, 255, 109, 109),
-
-      body: Padding(
-        padding: EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(child: Image.asset('images/ch1.png', width: 200, height: 200)),
-            Divider(height: 40, color: Colors.white, thickness: 0.5),
-            Text("NAME", style: TextStyle(color: Colors.white)),
-            SizedBox(height: 10),
-            Text(
-              "전도현",
-              style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: fontWeightBold),
-            ),
-            /*SizedBox(height: 10),
-            Text("BAANTO POWER LEVEL", style: TextStyle(color: Colors.white)),
-            SizedBox(height: 10),
-            Text(
-              "10",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: fontWeightBold,
-              ),
-            ),*/
-            SizedBox(height: 25),
-            Row(
-              spacing: 15,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(Icons.book_outlined),
-                Text("Department:\nDepartment of Media-Software", style: TextStyle(fontSize: 20)),
-              ],
-            ),
-            Row(
-              spacing: 15,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(Icons.menu_book_outlined),
-                Text("Lecture\nApp Programming", style: TextStyle(fontSize: 20)),
-              ],
-            ),
-            Row(
-              spacing: 15,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(Icons.check_circle_outline),
-                Text("Week 4", style: TextStyle(fontSize: 20)),
-              ],
-            ),
-            SizedBox(height: 25),
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/image/pf.jpg'),
-                radius: 70,
-                backgroundColor: Colors.amber[800], // jpg => no use
-              ),
-            ),
-          ],
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Animal Sounds",
+      theme: ThemeData(colorSchemeSeed: Colors.blue),
+      home: MusicalInstruments(),
     );
   }
 }
+
+// class AnimalSounds extends StatelessWidget {
+//   const AnimalSounds({super.key});
+//   void playSound(String name) {
+//     final AudioPlayer player = AudioPlayer();
+//     player.play(AssetSource('$name.wav'));
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//         title: Text("Animal Sounds", style: TextStyle(fontSize: 24, color: Colors.white)),
+//         centerTitle: true,
+//         leading: SizedBox(height: 50, width: 150, child: Lottie.asset("lottie/petitcat.json", reverse: true)),
+//         actions: [Lottie.asset('lottie/petitcat.json', reverse: true), Icon(Icons.search)],
+//       ),
+//       body: SafeArea(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           children: [
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('bear'), child: Image.asset("images/bear.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Bear", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('fox'), child: Image.asset("images/fox.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Fox", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('koala'), child: Image.asset("images/koala.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Koala", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('kamel'), child: Image.asset("images/camel.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Camel", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('lion'), child: Image.asset("images/lion.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Lion", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//                 Column(
+//                   children: [
+//                     GestureDetector(onTap: () => playSound('tiger'), child: Image.asset("images/tiger.png", height: 100)),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10, bottom: 10),
+//                       child: Container(width: 115, height: 5, color: Colors.green),
+//                     ),
+//                     Text("Tiger", style: TextStyle(fontSize: 20)),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//       backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+//     );
+//   }
+// }
