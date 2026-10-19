@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'seatsel.dart';
+// import 'seatsel.dart';
+import 'buttons.dart';
 
 double cw = 100;
 double ch = 100;
@@ -29,9 +30,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "공연 좌석 선택",
-      theme: ThemeData(colorSchemeSeed: Colors.lightGreen),
-      home: SeatSelect(),
+      theme: ThemeData(colorSchemeSeed: Colors.lightBlue),
+      home: Buttons(),
     );
   }
 }
