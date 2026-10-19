@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // import 'seatsel.dart';
-import 'buttons.dart';
+import 'basicnavigator.dart';
 
 double cw = 100;
 double ch = 100;
@@ -31,7 +31,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.lightBlue),
-      home: Buttons(),
+      home: MyHomepage(),
     );
   }
 }
