@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'seatsel.dart';
 
-import 'fontweightdef.dart';
-
 double cw = 100;
 double ch = 100;
 
