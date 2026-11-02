@@ -12,9 +12,40 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  String username = '';
+  String rawPasswd = '';
+  String rawPasswdConfirm = '';
+  String errorMessage = '';
+  int errorcode = 0;
+
+  ///
+  /// Password Validity Check method
+  ///
+  /// Run on State Update
+  ///
+  void confirmPassword() {
+    if (rawPasswd.isEmpty || rawPasswdConfirm.isEmpty) {
+      errorMessage = '';
+      errorcode = -1;
+      return;
+    }
+    if (rawPasswd.length < 6) {
+      errorMessage = 'Password length should be 6 or more';
+      errorcode = 1;
+      return;
+    }
+    if (rawPasswd != rawPasswdConfirm) {
+      errorMessage = 'Password and Password Confirm is not equal';
+      errorcode = 2;
+      return;
+    }
+    errorMessage = '';
+    errorcode = 0;
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.grey[300],
+    backgroundColor: Colors.blueGrey[200],
     body: SafeArea(
       child: SingleChildScrollView(
         child: Column(

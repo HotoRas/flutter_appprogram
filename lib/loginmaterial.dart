@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class LoginInput extends StatelessWidget {
   final String inputHint;
   final bool isPassword;
-  const new(this.inputHint, {super.key, this.isPassword = false});
+  final void Function(String)? onSubmit;
+  const new(this.inputHint, {super.key, this.isPassword = false, this.onSubmit});
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: EdgeInsets.symmetric(horizontal: 25),
     child: TextField(
       obscureText: isPassword,
+      onSubmitted: onSubmit,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade200)),
@@ -23,13 +25,11 @@ class LoginInput extends StatelessWidget {
 }
 
 class LoginContainer extends StatelessWidget {
-  final double width;
+  final double width, radius;
   final double? height;
   final Color? bgColor;
   final String? imagePath;
-  final double radius;
   final Icon? icon;
-
   const new({super.key, required this.width, this.height, this.bgColor, this.imagePath, this.radius = 6, this.icon});
 
   @override
