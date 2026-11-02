@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'testlogin.dart';
 
-// import 'buttons.dart';
+import 'buttons.dart';
 
 class MyHomepage extends StatelessWidget {
   const new({super.key});
@@ -15,18 +15,25 @@ class MyHomepage extends StatelessWidget {
         child: Column(
           children: [
             Text('homepage', style: TextStyle(fontSize: 24)),
-            ElevatedButton(
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginTemplate())),
-              child: Text('Log In...'),
-            ),
-            // TextButton(
-            //   onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => ButtonsExample())),
-            //   child: Text('buttons example page'),
-            // ),
-            FilledButton(
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => MypageError(reason: 'You asked me to crash'))),
-              style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
-              child: Text('Intentionally crash (internal)'),
+            Text('20231023 전도현', style: TextStyle(fontSize: 12, color: Colors.grey)),
+            Center(
+              child: Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginTemplate())),
+                    child: Text('Log In...'),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => ButtonsExample())),
+                    child: Text('buttons example page'),
+                  ),
+                  FilledButton(
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => MypageError(reason: 'You asked me to crash'))),
+                    style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
+                    child: Text('Intentionally crash (internal)'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
