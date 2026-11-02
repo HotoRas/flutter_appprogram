@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appprogram_20231023/loginpage.dart';
 
 import 'layout.dart';
 
@@ -11,6 +12,6 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     theme: ThemeData(colorSchemeSeed: Colors.lightBlue),
-    home: LoginLayout(),
+    home: Layout(child: LoginPageWrapper()),
   );
 }

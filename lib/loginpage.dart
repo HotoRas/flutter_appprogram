@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_appprogram_20231023/layout.dart';
 import 'package:flutter_appprogram_20231023/registerpage.dart';
 
 import 'loginmaterial.dart';
@@ -14,7 +15,7 @@ class LoginPageWrapper extends StatefulWidget {
 class _LoginState extends State<LoginPageWrapper> {
   @override
   Widget build(BuildContext context) {
-    final double currentWidth = MediaQuery.of(context).size.width;
+    // final double currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SafeArea(
@@ -22,14 +23,14 @@ class _LoginState extends State<LoginPageWrapper> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 80),
-              Text('Display Width: ${currentWidth.toString()}', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+              // SizedBox(height: 80),
+              // Text('Display Width: ${currentWidth.toString()}', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
               Image.asset('images/codingchef.png', width: 150, height: 150)
                   .animate()
                   .fade()
                   .slideY(begin: -3, end: 0)
                   .animate(onPlay: (c) => c.repeat())
-                  .shake(hz: 4, curve: Curves.easeInOutCubic, duration: 1800.ms),
+                  .shake(hz: 4, curve: Curves.easeInOutQuad, duration: 1800.ms),
               GreyText(
                 'Welcome back',
                 size: 20,
@@ -54,7 +55,7 @@ class _LoginState extends State<LoginPageWrapper> {
                 children: [
                   GreyText('Not a member?').animate().fade().slideX(begin: -2, end: 0, duration: 300.ms),
                   TextButton(
-                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => RegisterPage())),
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => Layout(child: RegisterPage()))),
                     child: Text(
                       'Register Now',
                       style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
