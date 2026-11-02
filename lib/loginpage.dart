@@ -18,7 +18,7 @@ class _LoginState extends State<LoginPageWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    // final double currentWidth = MediaQuery.of(context).size.width;
+    final double currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.deepPurple[100],
       body: SafeArea(
@@ -28,7 +28,7 @@ class _LoginState extends State<LoginPageWrapper> {
             spacing: 25,
             children: [
               SizedBox(height: 80),
-              // Text('Display Width: ${currentWidth.toString()}', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+              Text('Display Width: ${currentWidth.toString()}', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
               Image.asset('images/codingchef.png', width: 150, height: 150)
                   .animate()
                   .fade()
