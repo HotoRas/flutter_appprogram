@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 class LoginInput extends StatelessWidget {
   final String inputHint;
   final bool isPassword;
-  final void Function(String)? onSubmit;
-  const new(this.inputHint, {super.key, this.isPassword = false, this.onSubmit});
+  final TextEditingController controller;
+  final TextInputType? kbdType;
+  const new(this.inputHint, {super.key, this.isPassword = false, required this.controller, this.kbdType});
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: EdgeInsets.symmetric(horizontal: 25),
     child: TextField(
+      keyboardType: kbdType,
+      controller: controller,
       obscureText: isPassword,
-      onSubmitted: onSubmit,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade200)),

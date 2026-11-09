@@ -12,12 +12,11 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  String username = '';
-  String rawPasswd = '';
-  String rawPasswdConfirm = '';
+  final regUsernameController = TextEditingController();
+  final regPasswordController = TextEditingController();
+  final regPasswdCfController = TextEditingController();
   String errorMessage = '';
   int errorcode = 0;
-  //TODO Hashed password storage (eq. to _loginState@State<StatefulWidget?>#loginpage.dart)
 
   ///
   /// Password Validity Check method
@@ -25,6 +24,9 @@ class _RegisterPageState extends State<RegisterPage> {
   /// Run on State Update
   ///
   void confirmPassword() {
+    String rawPasswd = regPasswordController.text;
+    String rawPasswdConfirm = regPasswdCfController.text;
+
     if (rawPasswd.isEmpty || rawPasswdConfirm.isEmpty) {
       errorMessage = '';
       errorcode = -1;
@@ -59,11 +61,11 @@ class _RegisterPageState extends State<RegisterPage> {
               weight: FontWeight.w500,
             ).animate().fade(delay: 500.ms).slideX(begin: -2, end: 0).tint(color: Colors.purple, delay: 1000.ms),
             SizedBox(height: 35),
-            LoginInput('Username'),
+            LoginInput('Email', controller: regUsernameController, kbdType: TextInputType.emailAddress),
             SizedBox(height: 15),
-            LoginInput('Password', isPassword: true),
+            LoginInput('Password', isPassword: true, controller: regPasswordController),
             SizedBox(height: 15),
-            LoginInput('Confirm Password', isPassword: true),
+            LoginInput('Confirm Password', isPassword: true, controller: regPasswdCfController),
             SizedBox(height: 15),
             Row(
               children: [

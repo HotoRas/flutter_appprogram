@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animate: ^4.5.2
+  flutter_svg: ^2.3.2
+  fluttertoast: ^10.0.2
+  lottie: ^3.8.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -23,3 +26,4 @@ flutter:
     - images/
     - assets/
     - assets/image/pf.jpg
+    - images/svg/
