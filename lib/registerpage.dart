@@ -17,6 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String rawPasswdConfirm = '';
   String errorMessage = '';
   int errorcode = 0;
+  //TODO Hashed password storage (eq. to _loginState@State<StatefulWidget?>#loginpage.dart)
 
   ///
   /// Password Validity Check method
