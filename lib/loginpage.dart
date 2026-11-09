@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_appprogram_20231023/layout.dart';
-import 'package:flutter_appprogram_20231023/registerpage.dart';
 
+import 'layout.dart';
+import 'registerpage.dart';
 import 'loginmaterial.dart';
 
 class LoginPageWrapper extends StatefulWidget {
