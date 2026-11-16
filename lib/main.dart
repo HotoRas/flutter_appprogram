@@ -12,6 +12,6 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     theme: ThemeData(colorSchemeSeed: Colors.lightBlue),
-    home: Layout(child: LoginPageWrapper()),
+    home: Layout(padding: EdgeInsets.all(16), child: LoginPageWrapper()),
   );
 }

@@ -1,0 +1,16 @@
+# dart pub global activate derry
+build: # caller for derry install @
+  apk: flutter build apk
+  apkDebug: $build:apk --debug
+
+install:
+  release:
+    (description): Build and install release APK
+    (scripts):
+      - $build:apk
+      - flutter install
+  debug:
+    (description): Build and install debug APK
+    (scripts):
+      - $build:apkDebug
+      - flutter install --debug

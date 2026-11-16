@@ -1,3 +1,4 @@
+import 'package:flutter_appprogram_20231023/future/futurepage.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -74,6 +75,10 @@ class _LoginState extends State<LoginPageWrapper> {
                       ),
                     ).animate().fade().slideX(begin: 3, end: 0, duration: 300.ms),
                   ],
+                ),
+                FilledButton.tonal(
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => Layout(child: Futurepage()))),
+                  child: Text('Test Page of Future<T>'),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,

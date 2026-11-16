@@ -4,11 +4,12 @@ import 'responsive/responsive_center.dart';
 
 class Layout extends StatelessWidget {
   final Widget child;
-  const new({super.key, required this.child});
+  final EdgeInsets padding;
+  const new({super.key, this.padding = EdgeInsets.zero, required this.child});
 
   @override
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Colors.grey[300],
-    body: ResponsiveCenter(maxContentWidth: Breakpoint.deskTop, padding: EdgeInsets.all(16), child: child),
+    body: ResponsiveCenter(maxContentWidth: Breakpoint.deskTop, padding: padding, child: child),
   );
 }
