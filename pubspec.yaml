@@ -11,7 +11,10 @@ dependencies:
     sdk: flutter
   flutter_animate: ^4.5.2
   flutter_svg: ^2.4.0
-  fluttertoast: ^10.0.2
+  fluttertoast:
+    git:
+      url: https://github.com/taufiqsejati/FlutterToast.git
+      ref: master
   lottie: ^3.8.2
   material_ui: ^1.11.0
 dev_dependencies:
