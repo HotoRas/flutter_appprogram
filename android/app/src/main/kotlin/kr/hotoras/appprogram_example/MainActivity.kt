@@ -1,4 +1,4 @@
-package com.example.flutter_appprogram_20231023
+package kr.hotoras.appprogram_example
 
 import io.flutter.embedding.android.FlutterActivity
 
