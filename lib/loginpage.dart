@@ -1,7 +1,7 @@
-import 'package:flutter_appprogram_20231023/future/futurepage.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import 'future/futurepage.dart';
 import 'layout.dart';
 import 'registerpage.dart';
 import 'loginmaterial.dart';
