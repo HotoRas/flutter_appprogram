@@ -39,7 +39,7 @@ class LottoBall extends StatelessWidget {
     return SizedBox(
       width: 30,
       height: 30,
-      child: SvgPicture.asset('images/svg/$number.svg', colorFilter: ColorFilter.mode(_ballColor(), BlendMode.srcIn)),
+      child: SvgPicture.asset('images/svg-balls/$number.svg', colorFilter: ColorFilter.mode(_ballColor(), BlendMode.srcIn)),
     );
   }
 }

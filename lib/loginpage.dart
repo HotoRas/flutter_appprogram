@@ -1,3 +1,4 @@
+import 'package:flutter_appprogram_20231023/screen/loading.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -79,6 +80,10 @@ class _LoginState extends State<LoginPageWrapper> {
                 FilledButton.tonal(
                   onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => Layout(child: Futurepage()))),
                   child: Text('Test Page of Future<T>'),
+                ),
+                FilledButton.tonal(
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (c) => Layout(child: Loading()))),
+                  child: Text('Weather Page'),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
