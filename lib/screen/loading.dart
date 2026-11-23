@@ -1,4 +1,5 @@
 import 'package:flutter_appprogram_20231023/future/weatherapp.dart';
+import 'package:flutter_appprogram_20231023/logger.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -22,7 +23,7 @@ class _LoadingState extends State<Loading> {
     longitude = location.longitude;
     latitude = location.latitude;
     if (longitude == null || latitude == null) {
-      print('location is null');
+      Logger.log('location is null');
       return;
     }
     Network network = Network(
@@ -70,6 +71,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     double temp = weather['main']['temp'];
     myTemp = temp.round();
     int condition = weather['weather'][0]['id'];
+    Logger.log('cond value: $condition');
     String? weatherIcon = WeatherIcon.getWeatherIcon(condition);
     if (weatherIcon == null) {
       icon = SizedBox.shrink();

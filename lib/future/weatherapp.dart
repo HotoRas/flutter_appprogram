@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter_appprogram_20231023/logger.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 
@@ -9,17 +10,17 @@ class MyLocation {
   Future<void> getMyCurrentLocation() async {
     try {
       LocationPermission permission = await Geolocator.requestPermission();
-      print('permission: $permission');
+      Logger.log('permission: $permission');
       if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
-        return print('위치 권한 거부됨');
+        return Logger.log('위치 권한 거부됨');
       }
       final LocationSettings locationSettings = LocationSettings(accuracy: LocationAccuracy.high, distanceFilter: 100);
       Position? position = await Geolocator.getCurrentPosition(locationSettings: locationSettings);
-      print('position: $position');
+      Logger.log('position: $position');
       longitude = position.longitude;
       latitude = position.latitude;
     } catch (e) {
-      print('위치 정보 가져오기 실패: $e');
+      Logger.log('위치 정보 가져오기 실패: $e');
     }
   }
 }
@@ -48,7 +49,7 @@ class WeatherIcon {
     if (cond < 600) return 'cloud_rain';
     if (cond < 700) return 'cloud_snow_alt';
     if (cond < 800) return 'sun';
-    if (cond < 804) return 'cloud_sun';
+    if (cond < 805) return 'cloud_sun';
     return null;
   }
 }
