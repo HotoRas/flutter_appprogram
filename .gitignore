@@ -58,3 +58,6 @@ app.*.map.json
 
 # week 5 mp3 assets will be ignored
 /assets/*.mp3
+
+# apis
+/lib/env/
